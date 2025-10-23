@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario HTML</title>
+</head>
+<body>
+    <h1>Formularios en HTML</h1>
+    <form action="formulario.html" method="post">
+        <label for="txtNombre">Nombre Completo</label>
+        <input
+            type="text"
+            name="txtNombre"
+            id="txtNombre"
+            placeholder="eg. Orlando Betancourth"
+            title="Nombre completo del usuario a registrarse."
+        />
+        <br/>
+        <label for="txtEmail">Correo Electrónico</label>
+        <input
+            type="email"
+            name="txtEmail"
+            id="txtEmail"
+            placeholder="eg. uncorre@corre.com"
+            title="Correo Electrónico asociado a la cuenta."
+        />
+        <br/>
+        <label>Tema Preferido:</label>
+        <input type="radio" name="theme" id="lightTheme" value="light" />
+        &nbsp;<label for="lightTheme">Light</label>
+        &nbsp;
+        <input type="radio" name="theme" id="darkTheme" value="dark" checked />
+        &nbsp;<label for="darkTheme">Dark</label>
+        <br/>
+        <label for="cmbCiudad">Ciudad de Residencia</label>
+        <select id="cmbCiudad" name="cmbCiudad">
+            <option value="TEG">Tegucigalpa</option>
+            <option value="SPS">San Pedro Sula</option>
+            <option value="DNL">Danlí</option>
+            <option value="CHL">Choluteca</option>
+            <option value="PRS">El Paraíso</option>
+            <option value="VLL">Valle</option>
+            <option value="NCM">Nacaome</option>
+            <option value="ESP">La Esperana</option>
+            <option value="SRC">Santa Rosa de Copán</option>
+        </select>
+        <br/>
+        <label for="txtSugerencia">Sugerencia</label><br/>
+        <textarea
+            name="txtSugerencia"
+            id="txtSugerencia"
+            placeholder="Sugerencia para la Facultad"
+        ></textarea>
+        <br/>
+
+        <button name="btnEnviar" value="save" type="submit">Enviar</button>
+        <button name="btnEnviar" value="delete" type="submit">Delete</button>
+    </form>
+</body>
+</html>

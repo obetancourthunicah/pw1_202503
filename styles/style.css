@@ -1,0 +1,63 @@
+/* Selector */
+/* Son expresiones que filtran o seleccionan
+nodos especificos del DOM del documento
+renderizado
+
+select * from DOM where selector = ?;
+*/
+
+* {
+    box-sizing: border-box;
+}
+body{
+    padding:0px;
+    margin:0px;
+}
+header {
+    background-color: #630;
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header section.branding {
+    display:flex;
+    gap: 1rem;
+    align-items: center;
+}
+header section.branding  img{
+    height: 48px;
+}
+header section.branding h1{
+    font-size: 1.25rem;
+}
+header nav ul {
+    list-style: none;
+    display:flex;
+    gap:0.5rem;
+}
+header nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+}
+header nav ul li a:hover {
+    background-color: #ffffff88;
+}
+header .searchform {
+    flex:1;
+    padding: 0.25rem 1rem;
+}
+header .searchform form {
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+}
+header .searchform form input {
+    flex:1;
+    font-size: 1rem;
+    padding:0.25rem 0.5rem;
+    border:none;
+    border-radius: 27px;
+    display: inline-block;
+}

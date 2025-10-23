@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a CSS</title>
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+    <header>
+        <section class="branding">
+            <img src="https://picsum.photos/128/64" alt="Logo" />
+            <h1>Historias de un Café</h1>
+        </section>
+        <section class="searchform">
+            <form action="#searchUri" method="get">
+                <label for="busqueda">Buscar</label>
+                <input type="text" placeholder="Buscar" name="busqueda" id="busqueda">
+                <button type="submit" name="buscar">Buscar</button>
+            </form>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="#">Categorías</a></li>
+                <li><a href="#">Gourmet</a></li>
+                <li><a href="#">Eventos</a></li>
+                <li><a href="#">Contactanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-panel">
+            <picture>
+                <source srcset="https://picsum.photos/id/140/1300/780" media="(min-width:1025px)" />
+                <source srcset="https://picsum.photos/id/140/1025/640" media="(min-width:720px)" />
+                <img src="https://picsum.photos/id/140/480/480" class="image-full" alt="heroPanel" />
+            </picture>
+            <div class="action-panel">
+                <h2>Some Action to do</h2>
+                <p>Some cool actions to do when you click on the following button</p>
+                <button>Click Me</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
