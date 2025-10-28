@@ -67,6 +67,7 @@ main .hero-panel{
     height: 70vh;
     background-color:rgb(238, 187, 136);
     overflow: hidden;
+    position: relative;
 }
 
 main .hero-panel img{
@@ -75,3 +76,33 @@ main .hero-panel img{
     object-fit: cover;
     object-position: bottom;
 }
+
+main .hero-panel .action-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #ffffffcc;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #000;
+}
+
+main .hero-panel .action-panel.q1 {
+    top: 25%;
+    left: 25%;
+}
+main .hero-panel .action-panel.q2 {
+    top: 25%;
+    left: 75%;
+}
+main .hero-panel .action-panel.q3 {
+    top: 75%;
+    left: 25%;
+}
+main .hero-panel .action-panel.q4 {
+    top: 75%;
+    left: 75%;
+}
+main .hero-panel .action-panel.t3 {}
+main .hero-panel .action-panel.t1 {}
