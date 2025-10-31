@@ -17,6 +17,7 @@ header {
     background-color: #630;
     color: #FFF;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
@@ -34,6 +35,7 @@ header section.branding h1{
 header nav ul {
     list-style: none;
     display:flex;
+    flex-direction: column;
     gap:0.5rem;
 }
 header nav ul li a{
@@ -108,6 +110,9 @@ main .hero-panel .action-panel.q4 {
 .container {
     padding: 0.75rem 1rem;
 }
+.mb-4 {
+    margin-bottom: 1rem;
+}
 .card-holder {
     display:flex;
     flex-direction: column;
@@ -115,6 +120,8 @@ main .hero-panel .action-panel.q4 {
 }
 .card {
     width: 300px;
+    max-width: 300px;
+    margin: 0px auto;
     border: 1px solid #eee;
     box-shadow: 3px 3px 5px #00000077;
     overflow:hidden;
@@ -168,4 +175,89 @@ main .hero-panel .action-panel.q4 {
     border-radius: 9px;
     padding:0.75rem 1rem;
     margin-left:auto;
+}
+
+/*
+móvil   0px - 720px
+tablet  720px - 1024px
+desktop 1024px - 1300px
+wide    1300px - inifito
+*/
+
+
+.grid {
+    display:flex;
+    flex-direction: column;
+}
+.grid .row {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.grid .row [class*='col-']{
+    flex-shrink: 0;
+    flex-grow: 0;
+    min-width:0px;
+}
+
+.grid .row .col-1 { flex-basis: calc(100% / 12 * 1);}
+.grid .row .col-2 { flex-basis: calc(100% / 12 * 2);}
+.grid .row .col-3 { flex-basis: calc(100% / 12 * 3);}
+.grid .row .col-4 { flex-basis: calc(100% / 12 * 4);}
+.grid .row .col-5 { flex-basis: calc(100% / 12 * 5);}
+.grid .row .col-6 { flex-basis: calc(100% / 12 * 6);}
+.grid .row .col-7 { flex-basis: calc(100% / 12 * 7);}
+.grid .row .col-8 { flex-basis: calc(100% / 12 * 8);}
+.grid .row .col-9 { flex-basis: calc(100% / 12 * 9);}
+.grid .row .col-10 { flex-basis: calc(100% / 12 * 10);}
+.grid .row .col-11 { flex-basis: calc(100% / 12 * 11);}
+.grid .row .col-12 { flex-basis: 100%;}
+
+
+/* Media Queries */
+@media (min-width:720px) {
+    .grid .row .col-m-1 { flex-basis: calc(100% / 12 * 1);}
+    .grid .row .col-m-2 { flex-basis: calc(100% / 12 * 2);}
+    .grid .row .col-m-3 { flex-basis: calc(100% / 12 * 3);}
+    .grid .row .col-m-4 { flex-basis: calc(100% / 12 * 4);}
+    .grid .row .col-m-5 { flex-basis: calc(100% / 12 * 5);}
+    .grid .row .col-m-6 { flex-basis: calc(100% / 12 * 6);}
+    .grid .row .col-m-7 { flex-basis: calc(100% / 12 * 7);}
+    .grid .row .col-m-8 { flex-basis: calc(100% / 12 * 8);}
+    .grid .row .col-m-9 { flex-basis: calc(100% / 12 * 9);}
+    .grid .row .col-m-10 { flex-basis: calc(100% / 12 * 10);}
+    .grid .row .col-m-11 { flex-basis: calc(100% / 12 * 11);}
+    .grid .row .col-m-12 { flex-basis: 100%;}
+}
+
+@media (min-width:1025px) {
+    .grid .row .col-l-1 { flex-basis: calc(100% / 12 * 1);}
+    .grid .row .col-l-2 { flex-basis: calc(100% / 12 * 2);}
+    .grid .row .col-l-3 { flex-basis: calc(100% / 12 * 3);}
+    .grid .row .col-l-4 { flex-basis: calc(100% / 12 * 4);}
+    .grid .row .col-l-5 { flex-basis: calc(100% / 12 * 5);}
+    .grid .row .col-l-6 { flex-basis: calc(100% / 12 * 6);}
+    .grid .row .col-l-7 { flex-basis: calc(100% / 12 * 7);}
+    .grid .row .col-l-8 { flex-basis: calc(100% / 12 * 8);}
+    .grid .row .col-l-9 { flex-basis: calc(100% / 12 * 9);}
+    .grid .row .col-l-10 { flex-basis: calc(100% / 12 * 10);}
+    .grid .row .col-l-11 { flex-basis: calc(100% / 12 * 11);}
+    .grid .row .col-l-12 { flex-basis: 100%;}
+}
+
+@media (min-width:1301px) {
+    .grid .row .col-xl-1 { flex-basis: calc(100% / 12 * 1);}
+    .grid .row .col-xl-2 { flex-basis: calc(100% / 12 * 2);}
+    .grid .row .col-xl-3 { flex-basis: calc(100% / 12 * 3);}
+    .grid .row .col-xl-4 { flex-basis: calc(100% / 12 * 4);}
+    .grid .row .col-xl-5 { flex-basis: calc(100% / 12 * 5);}
+    .grid .row .col-xl-6 { flex-basis: calc(100% / 12 * 6);}
+    .grid .row .col-xl-7 { flex-basis: calc(100% / 12 * 7);}
+    .grid .row .col-xl-8 { flex-basis: calc(100% / 12 * 8);}
+    .grid .row .col-xl-9 { flex-basis: calc(100% / 12 * 9);}
+    .grid .row .col-xl-10 { flex-basis: calc(100% / 12 * 10);}
+    .grid .row .col-xl-11 { flex-basis: calc(100% / 12 * 11);}
+    .grid .row .col-xl-12 { flex-basis: 100%;}
+
 }
