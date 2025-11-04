@@ -48,7 +48,7 @@
                 <button>Click Me</button>
             </div>
         </section>
-        <section class="container">
+        <section class="container container-l">
             <div class="card-holder grid">
                 <div class="row">
                     <div class="col-12 col-m-6 col-l-4 mb-4">
@@ -153,6 +153,38 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section class="grid">
+            <div class="row order-inverse-m">
+                <div class="container col-12 col-m-6 right-panel">
+                    <h2>Contactanos</h2>
+                    <form action="" method="get" class="grid">
+                        <div class="row items-center margin-b">
+                            <label class="col-12 col-m-4" for="txtNombre">Nombre Completo: </label>
+                            <input class="col-12 col-m-8" type="text" id="txtNombre" name="nombre" placeholder="Nombre Completo" required/>
+                        </div>
+                        <div class="row items-center margin-b">
+                            <label class="col-12 col-m-4" for="txtCorreo">Correo: </label>
+                            <input class="col-12 col-m-8" type="email" id="txtCorreo" name="correo" placeholder="Correo Electrónico" required/>
+                        </div>
+                        <div class="row items-center margin-b">
+                            <label class="col-12 col-m-4" for="txtTelefono">Telefono: </label>
+                            <input class="col-12 col-m-8" type="text" id="txtTelefono" name="telefono" placeholder="Teléfono" required/>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 row justify-end">
+                                <button class="btnForm" type="submit">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-m-6 left-panel">
+                    <picture>
+                        <source srcset="https://picsum.photos/id/288/640/640" media="(min-width:720px)" />
+                        <img src="https://picsum.photos/id/288/480/480" alt="Half panel Image"/>
+                    </picture>
                 </div>
             </div>
         </section>
