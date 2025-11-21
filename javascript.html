@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript en HTML</title>
+    <script src="javascript/introJavascript.js"></script>
+    <style>
+        .carrusel {
+            height:60vh;
+            width:100vw;
+            min-width:0;
+            position: relative;
+            overflow: hidden;
+        }
+        .carrusel-track {
+            position: relative;
+            display: flex;
+            transition: transform 0.7s ease-in-out;
+        }
+        .carrusel-item {
+            flex-shrink: 0;
+            flex-grow: 0;
+            position: relative;
+            width:100vw;
+            height:60vh;
+            overflow: hidden;
+        }
+        .carrusel-item img {
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carrusel-item div {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            padding:5rem;
+            border-radius: 17px;
+            box-shadow: 3px 3px #000;
+            background-color: #ffffffaa;
+        }
+        .carrusel_right, .carrusel_left {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding:3rem 1rem;
+            font-weight: bold;
+            background-color: #ffffffaa;
+            position: absolute;
+            z-index: 1000;
+            font-size:2rem;
+            box-shadow: 0px 0px 3px #000;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .carrusel_right {
+            border-top-left-radius: 27px;
+            border-bottom-left-radius: 27px;
+            right:0px;
+        }
+
+        .carrusel_left {
+            border-top-right-radius: 27px;
+            border-bottom-right-radius: 27px;
+            left:0px;
+        }
+
+    </style>
+</head>
+<body>
+   <header>
+    <h1>Ejemplo de Carusel</h1>
+   </header>
+   <main>
+    <section class="carrusel">
+        <div class="carrusel-track">
+            <div class="carrusel-item">
+                <picture>
+                    <source srcset="https://picsum.photos/id/30/1300/640" media="(min-width:1025px)" />
+                    <source srcset="https://picsum.photos/id/30/1035/640" media="(min-width:720px)" />
+                    <img src="https://picsum.photos/id/30/480/480" alt="Imagen carrusel" />
+                </picture>
+                <div>
+                    <h2>Carrusel 1</h2>
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <picture>
+                    <source srcset="https://picsum.photos/id/40/1300/640" media="(min-width:1025px)" />
+                    <source srcset="https://picsum.photos/id/40/1035/640" media="(min-width:720px)" />
+                    <img src="https://picsum.photos/id/40/480/480" alt="Imagen carrusel 2" />
+                </picture>
+                <div>
+                    <h2>Carrusel 2</h2>
+                </div>
+            </div>
+            <div class="carrusel-item">
+                <picture>
+                    <source srcset="https://picsum.photos/id/90/1300/640" media="(min-width:1025px)" />
+                    <source srcset="https://picsum.photos/id/90/1035/640" media="(min-width:720px)" />
+                    <img src="https://picsum.photos/id/90/480/480" alt="Imagen carrusel 3" />
+                </picture>
+                <div>
+                    <h2>Carrusel 3</h2>
+                </div>
+            </div>
+             <div class="carrusel-item">
+                <picture>
+                    <source srcset="https://picsum.photos/id/190/1300/640" media="(min-width:1025px)" />
+                    <source srcset="https://picsum.photos/id/190/1035/640" media="(min-width:720px)" />
+                    <img src="https://picsum.photos/id/190/480/480" alt="Imagen carrusel 3" />
+                </picture>
+                <div>
+                    <h2>Carrusel 4</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+   </main>
+   <footer></footer>
+</body>
+</html>
