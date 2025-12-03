@@ -49,6 +49,17 @@
     box-shadow: 3px 3px 5px #000;
     border-radius: 7px;
     width: 8rem;
+    background-color:#fff;
+    cursor: pointer;
+}
+
+.plancontainer .bloque .bloque_clases .bloqueClase.clase_requisito{
+    background-color: cyan;
+}
+
+.plancontainer .bloque .bloque_clases .bloqueClase.clase_apertura{
+    background-color: forestgreen;
+    color:white;
 }
 
 .plancontainer .bloque .bloque_clases .bloqueClase span:nth-child(3) {

@@ -1,9 +1,9 @@
 const planICC = {
-    title : "Plan de Estudio ICC",
+    title: "Plan de Estudio ICC",
     bloques: [
         {
             name: "I",
-            asignaturas : [
+            asignaturas: [
                 {
                     codigo: 'ES101',
                     nombre: "Español",
@@ -38,7 +38,7 @@ const planICC = {
         },
         {
             name: "II",
-            asignaturas : [
+            asignaturas: [
                 {
                     codigo: 'ES201',
                     nombre: "Expresión Oral y Escrita",
@@ -73,7 +73,7 @@ const planICC = {
         },
         {
             name: "III",
-            asignaturas : [
+            asignaturas: [
                 {
                     codigo: 'MT302',
                     nombre: "Estadística I",
@@ -108,7 +108,7 @@ const planICC = {
         },
     ]
 }
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
     const planContainer = document.getElementById("planIccContainer");
     const planEstudioInstance = new PlanDeEstudio(planContainer, planICC);
     planEstudioInstance.createUX();
@@ -117,9 +117,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
 class PlanDeEstudio {
     container = null;
     structure = null;
-    constructor( container, planStructure ){
+    nodes = null;
+    constructor(container, planStructure) {
         this.container = container;
         this.structure = planStructure;
+        this.nodes = {};
         this.container.classList.add("plancontainer");
         let titleElement = document.createElement("H1");
         titleElement.innerHTML = this.structure.title;
@@ -128,7 +130,7 @@ class PlanDeEstudio {
         );
     }
 
-    createUX(){
+    createUX() {
         /*
             x 1. Recorrer por los Bloque para dibujar contenedores del los bloques
             2. De Forma Recursiva por Bloque se generará los nodos por cada clase
@@ -142,7 +144,7 @@ class PlanDeEstudio {
             throw Error("El plan no tiene bloques");
         }
         let bloquesUX = this.structure.bloques.map(
-            (bloque)=>{
+            (bloque) => {
                 const contendorBloque = document.createElement("div");
                 contendorBloque.classList.add("bloque");
                 const labelBloque = document.createElement("div");
@@ -159,7 +161,7 @@ class PlanDeEstudio {
         });
     }
 
-    createAsignaturasUX(asignaturas){
+    createAsignaturasUX(asignaturas) {
         const asignaturasBloque = document.createElement("div");
         asignaturasBloque.classList.add("bloque_clases");
 
@@ -173,12 +175,38 @@ class PlanDeEstudio {
                 codLabel.innerHTML = asignatura.codigo;
                 nameLabel.innerHTML = asignatura.nombre;
                 crdLabel.innerHTML = asignatura.creditos;
+                if (!this.nodes[asignatura.codigo]) {
+                    this.nodes[asignatura.codigo] = {
+                        node: claseUX,
+                        requisitos: [],
+                        apertura: []
+                    }
+                    asignatura.requisitos.forEach(r => {
+                        this.nodes[asignatura.codigo].requisitos.push(this.nodes[r].node)
+                        this.nodes[r].apertura.push(this.nodes[asignatura.codigo].node)
+                    }
+                    );
+                }
+                const currentNode  = this.nodes[asignatura.codigo];
+                // registrar los eventos que se requieren cloujure
+                claseUX.addEventListener("mouseover", (e) => {
+                    if (e.target.tagName.toUpperCase() !== 'SPAN') {
+                        currentNode.requisitos.forEach( n => n.classList.add("clase_requisito"));
+                        currentNode.apertura.forEach( n => n.classList.add("clase_apertura"));
+                    }
+                });
+                claseUX.addEventListener("mouseleave", (e) => {
+                    if (e.target.tagName.toUpperCase() !== 'SPAN') {
+                        currentNode.requisitos.forEach( n => n.classList.remove("clase_requisito"));
+                        currentNode.apertura.forEach( n => n.classList.remove("clase_apertura"));
+                    }
+                });
                 claseUX.appendChild(codLabel);
                 claseUX.appendChild(nameLabel);
                 claseUX.appendChild(crdLabel);
                 asignaturasBloque.appendChild(claseUX);
             }
-         );
+        );
 
         return asignaturasBloque;
     }
